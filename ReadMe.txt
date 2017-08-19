@@ -1,8 +1,7 @@
 Hello world.
 
-This is the first task i had to do on my course.
-I know its trivial but i have high hope to contribute to the wonderful world of code the very
-near future.
+This is the first task I had to do on my course.
+I know its trivial, but I have high hope of contributing to the wonderful world of Coding 
+in the very near future.
 
-Watch this space.
-
+So Watch this space.
