@@ -100,7 +100,23 @@ So a standard workflow should be as follows:
 
 Make changes -> Add to Staging Area -> Commit to local repository
 
+git fetch = This will fetch a list of all the remote branches:
 
+git checkout -b test origin/test = So in plain English, this would read as checkout to a 
+									new branch called test that’s linked to origin/test.
+
+git branch = This will give the list of local branches and it will also have an asterisk 
+				to indicate which branch we are currently on.
+
+git checkout <master> = This is the branch you wish to change too.
+
+git merge <test> = Basically what’s happened is we’ve decided that we want to merge our 
+					changes in the test branch into the master branch. In order to 
+					achieve this, we checked out the master branch and then ran git 
+					merge test to merge the test branch into the master branch.
+					
+git push origin master = Will push that code into the remote master branch
+					
 
 
 
