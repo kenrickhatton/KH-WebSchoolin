@@ -1,0 +1,112 @@
+The command line Interface
+
+ls = output a list of all the folders and files of the directory that you are currently in
+
+mkdir test = mkdir means make directory. Directory is just another term for folder. 
+				Then test is the name that we want to give to that new directory.
+
+cd test = cd stands for change directory. This is similar to double clicking on a folder 
+			to open it up
+			In this instance, we are again using test as our parameter because we want to 
+			change into the test directory.
+			So now that we have some basics, let’s get back to working with Git.
+
+git init = This will initialise a new Git instance in our new test directory
+			This creates a new directory called .git. A file or directory that is preceded 
+			by a dot (.) usually will not be displayed. Even running the ls command won’t 
+			show this directory. This is called a hidden directory.
+
+			In order to see a hidden directory from the command, we need to use a flag. 
+			A flag is something we use to signify that we wish to run a command with 
+			certain settings:
+
+ls -a = -a will usually mean all.
+		This will now display all of the hidden directories in this directory.
+		We also have . and ..
+			A single dot (.) means the current directory. 
+			Double dots (..) means the directory above. 
+			
+		In this example I have created my test directory inside my Documents directory. 
+		One directory above my test directory will bring me to my Documents directory.
+
+		If I wished to move back to my Documents directory from inside the test directory, 
+		I would use the following command:
+
+cd .. = Similarly, if I wished to change into the .git directory from my test directory, 
+		I would simply use:
+
+cd .git = But let’s continue working in our test directory. 
+Try running the following command: - git status
+
+git status = This will give us information on the current state of our repository.
+				Firstly, it says On branch master. Every Git repository will contain a 
+				master branch. The master will usually contain the latest working version 
+				of the codebase.
+			 Usually when a developer is working on a piece of functionality, 
+			 	they’ll fork the master branch. This will create a copy of the master 
+			 	branch that a developer can work on in isolation of the main codebase.
+			Once they have finished developing their new functionality, they’ll merge 
+			their code back into the master branch.
+
+			On the next line it says Initial commit. This just tells us what the last 
+				commit message was. We haven’t created one yet, but convention for 
+				creating the first commit of a repository is to include a message of 
+				Initial commit.
+			A commit is when the developer decides that the code they’ve been working on 
+				is ready and wish to commit it into the repository.
+
+			After that, we have nothing to commit…. This just means that we haven’t made 
+				any further changes to the repository.
+			Once we use git init, a new repository is created in the location that the 
+				command is executed from. Once this happens, Git will begin to track all 
+				of the files inside the directory. The reason it does this is so all of 
+				the changes are documented throughout the lifecycle of the application.
+
+			Go ahead and open up a text editor such as Notepad or Pages. Type the phrase 
+			“Hello, World!” into the document and save it in the test directory as 
+			hello.txt.
+
+git add hello.txt = simply telling Git to add hello.txt to the repository. From now on, 
+						Git will continue to track all of the changes made to this file.
+
+git config --global user.name "<Your name>"
+git config --global user.email "<your email address>"
+
+	The above settings  = This will set Git’s global config for both your name and email. 
+							Now we can commit our changes:
+
+git commit -m "Initial commit" = 
+
+	As we can now see, we have committed one change. Let’s revise what’s being going on 
+	here:
+
+		First we created a new directory called test.
+			Then inside that directory we used git init to create a new local repository.
+				After that we created a new file in the repository called hello.txt. 
+				We then added those changes.
+					We then use git add to track the changes. Then we commit those 
+					changes.
+						So what exactly is going on here?
+
+The directory where we initialised Git is considered to be our working directory and all 
+of the files contained within the working directory are our project files.
+In order to allow us to contribute to the project, Git must track our files. If we make 
+changes to a file, or create a new file, those changes will be untracked.
+When we use add, we’re adding those changes to Git’s staging area and those changes will 
+then be considered tracked.
+Once a file is staged, we can then commit that file. Once we run the commit command, 
+we commit all of the files in the staging area into the local repository.
+So a standard workflow should be as follows:
+
+Make changes -> Add to Staging Area -> Commit to local repository
+
+
+
+
+
+
+
+
+
+
+
